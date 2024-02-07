@@ -17,10 +17,10 @@ $requete->execute();
 // 1 enregistrement = 1 tableau associatif
 $etudiants = $requete->fetchAll(mode: PDO::FETCH_ASSOC);
 
-print_r($etudiants);
-
 ?>
-
+<pre>
+    <?php print_r($etudiants); ?>
+</pre>
 <!doctype html>
 <html lang="en">
 <head>
