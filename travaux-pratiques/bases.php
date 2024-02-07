@@ -26,7 +26,7 @@
 ]; ?>
 
 <!doctype html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -47,6 +47,7 @@
 </head>
 <body class="bg-light">
 <!--Insertion d'un menu-->
+
 <?php include_once '../_partials/menu.php' ?>
 <div class="container">
     <h1 class="my-3 text-warning text-center">Travaux pratiques - Bases</h1>
@@ -59,36 +60,36 @@
     <div>
         <p>Soit le tableau suivant : </p>
         <div class="text-success fw-bold">
-            <pre class="bg-primary border rounded-4 text-white fw-bold m-4 w-50">
-                <code>
-                     $comptes = [
-                         [
-                             "prenom" => "Jean",
-                             "nom" => "Dupond",
-                             "email" => "jdupond@exemple.fr",
-                             "premium" => true,
-                         ],
-                         [
-                             "prenom" => "Pierre",
-                             "nom" => "Durand",
-                             "email" => "pdurand@exemple.fr",
-                             "premium" => false,
-                         ],
-                         [
-                             "prenom" => "Anne",
-                             "nom" => "Martin",
-                             "email" => "amartin@exemple.fr",
-                             "premium" => true,
-                         ],
-                         [
-                             "prenom" => "Pauline",
-                             "nom" => "Sapin",
-                             "email" => "psapin@exemple.fr",
-                             "premium" => false,
-                         ],
-                     ];
-                </code>
-            </pre>
+                <pre class="bg-primary border rounded-4 text-white fw-bold m-4 w-50">
+                    <code>
+                         $comptes = [
+                             [
+                                 "prenom" => "Jean",
+                                 "nom" => "Dupond",
+                                 "email" => "jdupond@exemple.fr",
+                                 "premium" => true,
+                             ],
+                             [
+                                 "prenom" => "Pierre",
+                                 "nom" => "Durand",
+                                 "email" => "pdurand@exemple.fr",
+                                 "premium" => false,
+                             ],
+                             [
+                                 "prenom" => "Anne",
+                                 "nom" => "Martin",
+                                 "email" => "amartin@exemple.fr",
+                                 "premium" => true,
+                             ],
+                             [
+                                 "prenom" => "Pauline",
+                                 "nom" => "Sapin",
+                                 "email" => "psapin@exemple.fr",
+                                 "premium" => false,
+                             ],
+                         ];
+                    </code>
+                </pre>
         </div>
     </div>
 
@@ -101,6 +102,34 @@
             <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
             <div class="bg-black rounded-4 p-3 flex-fill">
                 <!-- Votre code -->
+                <table class="table table-primary">
+                    <thead>
+                    <tr>
+                        <th class="text-warning">Prénom</th>
+                        <th class="text-warning">Nom</th>
+                        <th class="text-warning">Email</th>
+                        <th class="text-warning">Premium</th>
+                        <th class="text-warning">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($comptes as $compte) : ?>
+                        <tr>
+                            <td><?= $compte["prenom"] ?></td>
+                            <td><?= $compte["nom"] ?></td>
+                            <td><?= $compte["email"] ?></td>
+                            <td><?= $compte["premium"] ? "oui" : "non" ?></td>
+                            <td>
+                                <button class="btn btn-danger">Supprimer</button>
+                                <button class="btn btn-warning">Modifer</button>
+                                <?php if ($compte["premium"] == false) : ?>
+                                    <button class="btn btn-success">Premium</button>
+                                <?php endif; ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                    </tbody>
+                </table>
 
             </div>
         </div>
@@ -127,6 +156,17 @@
             </div>
         </div>
     </div>
+    <div class="col">
+        Column
+    </div>
+    <div class="col">
+        Column
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
