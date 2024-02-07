@@ -1,6 +1,24 @@
 <?php
 // Récupérer la liste des étudiants dans la table etudiant
 
+// 1° Connexion à la base de données db_intro
+/**
+ * @var PDO $pdo
+ */
+require '../config/db-config-bd.php';
+
+// 2° Préparation de la requête
+$requete = $pdo->prepare(query: "SELECT * FROM etudiant");
+
+// 3° Exécution de la requête
+$requete->execute();
+
+// 4° Récupération des enregistrements
+// 1 enregistrement = 1 tableau associatif
+$etudiants = $requete->fetchAll(mode: PDO::FETCH_ASSOC);
+
+print_r($etudiants);
+
 ?>
 
 <!doctype html>
@@ -41,7 +59,7 @@
         <h4>Schéma de la table etudiant</h4>
         <img src="../assets/images/table-etudiant.png" alt="tab" class="img-fluid">
     </div>
-    
+
     <div class="bg-dark p-3 shadow rounded-4">
         <div class="d-flex mt-2">
             <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
