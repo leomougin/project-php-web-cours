@@ -152,23 +152,10 @@
             <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
             <div class="bg-black rounded-4 p-3 flex-fill">
                 <!-- Votre code -->
-
             </div>
         </div>
     </div>
-    <div class="col">
-        Column
-    </div>
-    <div class="col">
-        Column
-    </div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
 
-<script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
