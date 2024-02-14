@@ -152,6 +152,33 @@
             <i class="bi bi-filetype-exe fs-2 text-warning text-bold"></i>
             <div class="bg-black rounded-4 p-3 flex-fill">
                 <!-- Votre code -->
+                <?php
+                foreach ($comptes as $compt):
+                    $prenom = $compt["prenom"];
+                    $nom = $compt["nom"];
+                    $mail = $compt["email"];
+                    if ($compt["premium"]) {
+                        $setbtn = false;
+                        $labelpremium = "Premium";
+                    } else {
+                        $setbtn = true;
+                        $labelpremium = "Non Premium";
+                    }
+
+
+                    echo "<p><div class='card border border-primary' style='width: 18rem;'>
+           <div class='card-body'>
+               <h5 class='card-title'>$prenom $nom</h5>
+               <p class='card-text'>$mail</p>
+               <p class='card-text' >$labelpremium</p>
+               <button class='btn btn-danger'><i class='bi bi-trash'></i></button>
+               <button class='btn btn-warning'><i class='bi bi-pencil-square'></i></button>
+               <button class='btn btn-success'><i class='bi bi-currency-euro'></i></button>
+               </div>
+       </div>
+</p>";
+                endforeach; ?>
+
             </div>
         </div>
     </div>
